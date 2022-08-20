@@ -1,4 +1,4 @@
-package com.aleshamray.addTwoNumbers;
+package com.aleshamray.easy.addTwoNumbers;
 
 public class ListNode {
   public int val;

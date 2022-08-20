@@ -1,4 +1,4 @@
-package com.aleshamray.mergeTwoSortedLists;
+package com.aleshamray.easy.mergeTwoSortedLists;
 
 
 /* 
@@ -23,7 +23,7 @@ package com.aleshamray.mergeTwoSortedLists;
   Output: [0] 
 */
 
-import com.aleshamray.addTwoNumbers.ListNode;
+import com.aleshamray.easy.addTwoNumbers.ListNode;
 
 public class App {
 

@@ -1,4 +1,4 @@
-package com.aleshamray.addTwoNumbers;
+package com.aleshamray.easy.addTwoNumbers;
 
 /* 
  * Input: l1 = [2,4,3], l2 = [5,6,4]
