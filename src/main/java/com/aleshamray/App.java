@@ -14,7 +14,7 @@ public class App {
         Set<String> files=new HashSet<>();
         listOfPackage("src/main/java/com/aleshamray/",files);
 
-        // System.out.println(files);
+        files.stream().forEach(System.out::println);
     }
 
     public static void listOfPackage(String directoryName, Set<String> pack) {
@@ -25,10 +25,9 @@ public class App {
         for (File file : fList) {
             if (file.isFile()) {
                 String path=file.getPath();
-                String packName=path.substring(path.indexOf("src")+4, path.lastIndexOf('/'));
+                String packName=path.substring(path.indexOf("java")+5, path.lastIndexOf('/'));
                 pack.add(packName.replace('/', '.'));
             } else if (file.isDirectory()) {
-                System.out.println(file.getAbsolutePath());
                 listOfPackage(file.getAbsolutePath(), pack);
             }
         }
