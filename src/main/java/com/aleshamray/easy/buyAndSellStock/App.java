@@ -1,4 +1,4 @@
-package com.aleshamray.buyAndSellStock;
+package com.aleshamray.easy.buyAndSellStock;
 
 /* 
  * You are given an array of prices where prices[i] is the price of a given stock on the ith day.
