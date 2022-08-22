@@ -2,11 +2,24 @@ package com.aleshamray.easy.binarySearch;
 
 public class App {
   public static void main(String[] args) {
+    int size = 10000;
+
+    int[] nums = Helper.generateSortedArray(size);
+    // for(int[] arr : Helper.getTestValues().keySet()) { nums = arr; }
     
+    int target = (int)Math.floor(Math.random()*(10000-(-10000)+1)+(-10000));
+    // int target = Helper.generateTargetInArray(nums);
+    // for(int val : Helper.getTestValues().values()) { target = val; }
+
+
+    System.out.println("\ntarget: " + target + "\n");
+
+    System.out.println("expected: " + Helper.findIndex(nums, target) + "; received: " + App.search(nums, target));
   }
   
-  public int search(int[] nums, int target) {
-    return 0;
+
+  public static int search(int[] nums, int target) {
+    return Helper.searchHelper(nums, 0, nums.length-1, target);
   }
 }
 
