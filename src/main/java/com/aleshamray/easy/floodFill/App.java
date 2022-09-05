@@ -34,40 +34,6 @@ public class App {
    *  1   0   1               2   0   1
    */
 
-/*   public static int[][] floodFill(int[][] image, int sr, int sc, int color) {
-    // // hold the original color
-    // int originalColor = image[sr][sc];
-
-    // check if above and below row and left and right column are in range
-    
-    boolean colInRangeUP = (sc-1 >= 0) && (sc-1 < image[0].length);
-    boolean rowInRangeRight = (sr+1 >= 0) && (sr+1 < image[0].length);
-    boolean colInRangeDown = (sc+1 >= 0) && (sc+1 < image[0].length);
-    boolean rowInRangeLeft = (sr-1 >= 0) && (sr-1 < image[0].length);
-
-    // hold the start, above, right, below, and left pixel colors
-    int start = image[sc][sr];
-    int above = colInRangeUP ? image[sc-1][sr] : -1;
-    int right = rowInRangeRight ? image[sc][sr+1] : -1;
-    int below = colInRangeDown ? image[sc+1][sr] : -1;
-    int left = rowInRangeLeft ? image[sc][sr-1] : -1; 
-    // if the pixel above the start pixel exists and equals the start pixel color
-      // return flood fill with the pixel above the start pixel
-    if (above > -1 && above == start) { floodFill(image, sr, sc-1, color); }
-    // if the pixel to the right of the start  exists and pixel equals the start pixel color
-      // return flood fill with the pixel to the right of the start pixel
-    if (right > -1 && right == start) { floodFill(image, sr+1, sc, color); }
-    // if the pixel below the start pixel  exists and equals the start pixel color
-      // return flood fill with the pixel below the start pixel
-    if (below > -1 && below == start) { floodFill(image, sr, sc+1, color); }
-    // if the pixel to the left of the start  exists and pixel equals the start pixel color
-      // return flood fill with the pixel to the left of the start pixel
-    if (left > -1 && left == start) { floodFill(image, sr-1, sc, color); }
-    // change the start pixel to the new color
-    image[sr][sc] = color;
-
-    return image;
-  } */
 
   public static int[][] floodFill(int[][] image, int sr, int sc, int color) {
 
