@@ -1,8 +1,6 @@
 package com.aleshamray.easy.floodFill;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class App {
 
@@ -12,34 +10,34 @@ public class App {
 
     int[][] result = App.floodFill(image, sr, sc, color);
     System.out.printf("\nexpected: [ [2,2,2] [2,2,0] [2,0,1] ]; received:[");
-    for(int[] arr : result) { System.out.print(" " + Arrays.toString(arr));}
-    System.out.println(" ]\n");
-
+    printArray(result);
 
     image = new int[][]{{0,0,0}, {0,0,0}};
     sr = 0; sc = 0; color = 0;
 
     result = App.floodFill(image, sr, sc, color);
     System.out.printf("expected: [ [0,0,0] [0,0,0] ]; received:[");
+    printArray(result);
+  }
+
+  public static void printArray(int[][] result) {
     for(int[] arr : result) { System.out.print(" " + Arrays.toString(arr));}
     System.out.println(" ]\n"); 
-  
   }
-  
-  /* 
-   *  Example 1:
-   * 
-   *  1   1   1               2   2   2
-   *  1   1   0       ->      2   2   0
-   *  1   0   1               2   0   1
-   */
 
+  public static void floodFillHelper(int[][] image, int sr, int sc, int prevColor, int newColor) {
+    if(image[sr][sc] != prevColor) { return; }
+    image[sr][sc] = newColor;
+
+    if(sr+1 < image.length) floodFillHelper(image, sr+1, sc, prevColor, newColor);
+    if(sr > 0) floodFillHelper(image, sr-1, sc, prevColor, newColor);
+    if(sc+1 < image[0].length) floodFillHelper(image, sr, sc+1, prevColor, newColor);
+    if(sc > 0) floodFillHelper(image, sr, sc-1, prevColor, newColor);
+  }
 
   public static int[][] floodFill(int[][] image, int sr, int sc, int color) {
-
-    List<Integer> result = new ArrayList<>();
-
-
+    if(image[sr][sc] == color) { return image; }
+    floodFillHelper(image, sr, sc, image[sr][sc], color);
     return image;
   }
 }
